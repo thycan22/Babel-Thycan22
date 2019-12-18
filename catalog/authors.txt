@@ -1,0 +1,6 @@
+Antoine de Saint-Exupéry,29 juin 1900,Vol de nuit ,Le Petit Prince
+Joseph Kessel,31 janvier 1898,L'Equipage
+Pierre Clostermann,28 février 1921,Le grand cirque
+Sylvain Estibal,19 novembre 1967,Le dernier vol de Lancaster
+Jack Higgins,27 juillet 1929,Le vol des aigles
+Fiona Kidman,26 mars 1940,Fille de l'air,
