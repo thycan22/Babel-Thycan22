@@ -1,8 +1,11 @@
 import input.second_copy
-from input.second_copy import F_ERRORE
-
+from second_copy import F_ERRORE
+import input2.year
 
 print("third")
+
+input2 = input2.year.controller_input()
+print(input2)
 
 input = input.second_copy.manage_input()
 d = input.second_copy.validate_display(input)
