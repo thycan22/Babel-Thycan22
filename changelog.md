@@ -30,7 +30,10 @@ Fonctions dates dont calcul avec deux dates
 -amélioration de l'installation de python afin d'installer des modules externes: REQUEST(Http POST,GET...) BEAUTIFULSOAP(scraping d'une page Http) DJANGO(serveur web et ses bibliothèques)
 -découverte du code source python:
 -virtualenv-->permet d'utiliser une configuration d'environnement propre à chaque projet et cela sur n'importe quel machine. on peut spécifier quel python on veut travailler et quel package on télécharge
+
 méthode 1: venv/requirements.txt(requests=3.0.1...)
 par exemple pour Babel-thycan22/venv/python....../site-packages
 puis pip install request
+
+Methode 2: pipenv
 
