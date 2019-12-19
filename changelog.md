@@ -23,6 +23,8 @@ Fonctions dates dont calcul avec deux dates
 -MVC Design pattern sur traitement d'une chaîne et de son affichage avec un controlleur
 -Tester la classe d'un objet isinstance(a,class)
 -readme.md format markdown
+
 19/12
 -opérateur Callable () --call--(self)    --add--(self)
-
+-Version majeur,mineur,macro V0.0.1
+-amélioration de l'installation de python afin d'installer des modules externes: REQUEST(Http POST,GET...) BEAUTIFULSOAP(scraping d'une page Http) DJANGO(serveur web et ses bibliothèques)
