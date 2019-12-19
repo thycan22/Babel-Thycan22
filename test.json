@@ -1,0 +1,26 @@
+[
+    {
+        "url": "https://www.lemonde.fr/",
+        "status_code": 200,
+        "content": "          <!DOCTYPE html> <html lang=\"fr\" prefix=\"og: http://ogp.me/ns#\"> <head> <meta charset=\"UTF-8\"> <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\"> <meta name=\"viewport\" content=\"width=device-width, initial-scale=1, shrink-to-fit=no\">    <script data-cmp=\"analytics\" data-cmp-src=\"//www.lemonde.fr/bucket/a918b21025d4bdaacb207a2f512cf304ab9fdee6/js/chartbeatConfig.bundle.js\" async=\"1\"></script>    <link rel=\"manifest\" href=\"/manifest.json\">  <script>\nif(sessionStorage.fontsFirst&&session",
+        "titre": "Le Monde.fr - Actualit\u00e9s et Infos en France et dans le monde"
+    },
+    {
+        "url": "https://www.ouest-france.fr/",
+        "status_code": 200,
+        "content": "<!doctype html>\n<html prefix=\"og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# article: http://ogp.me/ns/article#\" class=\"no-js\" lang=\"fr\">\n<head>\n    <meta charset=\"utf-8\">\n    <meta http-equiv=\"x-ua-compatible\" content=\"ie=edge\">\n    <meta name=\"viewport\" content=\"width=device-width\">\n    <script type=\"text/javascript\" src=\"https://media.ouest-france.fr/v1/javascripts/d5f18db56ca69d245e25599e5786c6f9-smarttag-d5f18db56c.js\"></script>\n        <script type=\"text/javascript\">\n            ;(function",
+        "titre": "Ouest-France : toute l'actualit\u00c3\u00a9 en direct, l'info en continu en France, dans les r\u00c3\u00a9gions et dans le monde"
+    },
+    {
+        "url": "https://www.lemonde.fr/",
+        "status_code": 200,
+        "content": "          <!DOCTYPE html> <html lang=\"fr\" prefix=\"og: http://ogp.me/ns#\"> <head> <meta charset=\"UTF-8\"> <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\"> <meta name=\"viewport\" content=\"width=device-width, initial-scale=1, shrink-to-fit=no\">    <script data-cmp=\"analytics\" data-cmp-src=\"//www.lemonde.fr/bucket/a918b21025d4bdaacb207a2f512cf304ab9fdee6/js/chartbeatConfig.bundle.js\" async=\"1\"></script>    <link rel=\"manifest\" href=\"/manifest.json\">  <script>\nif(sessionStorage.fontsFirst&&session",
+        "titre": "Le Monde.fr - Actualit\u00e9s et Infos en France et dans le monde"
+    },
+    {
+        "url": "https://www.python.org/",
+        "status_code": 200,
+        "content": "<!doctype html>\n<!--[if lt IE 7]>   <html class=\"no-js ie6 lt-ie7 lt-ie8 lt-ie9\">   <![endif]-->\n<!--[if IE 7]>      <html class=\"no-js ie7 lt-ie8 lt-ie9\">          <![endif]-->\n<!--[if IE 8]>      <html class=\"no-js ie8 lt-ie9\">                 <![endif]-->\n<!--[if gt IE 8]><!--><html class=\"no-js\" lang=\"en\" dir=\"ltr\">  <!--<![endif]-->\n\n<head>\n    <meta charset=\"utf-8\">\n    <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">\n\n    <link rel=\"prefetch\" href=\"//ajax.googleapis.com/ajax/libs/jqu",
+        "titre": "Welcome to Python.org"
+    }
+]

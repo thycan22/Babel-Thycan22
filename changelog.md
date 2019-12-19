@@ -37,3 +37,19 @@ puis pip install request
 
 Methode 2: pipenv
 
+installation de l'environnement en pipenv black 
+
+package Http installation
+premier algo lecture de url et affichage de la réponse en console
+        Main()
+            -liste de 3 urls
+            -itération sur la liste avec: get_url(listurl,bool)  ->none
+            <attention au retour par gestion des erreurs>
+
+        get()  .status_code 
+                .headers (soit auth, clé auth, user psw etc..)
+                .text ->Html
+
+        searchtitle(text)                   fonction find
+        
+ package beautifulsoup4       
