@@ -75,3 +75,8 @@ premier algo lecture de url et affichage de la réponse en console
 debuguer 
         -script execution sous win10, accés autorisé
                 enlever le warning w291 (mettre un \n enfin de ) chez Flake8(->Lint aide à la syntaxe avant d'attendre la compilation)
+## 20/12
+checkurl, soup meta donnée
+count dans list dataset
+
+Django cheet sheet
