@@ -23,6 +23,7 @@ F_COUNT = "count"
 
 
 def get(url_en_arg):
+    ''' requète l'url en argument et retourne la réponse http'''
     user_agent = "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:71.0) Gecko/20100101 Firefox/71.0"
     headersdict = {"User-Agent": user_agent}
     req = requests.get(url_en_arg, headers=headersdict)
@@ -36,11 +37,11 @@ def get(url_en_arg):
 
 
 def writetodict(req, is_verbose=False):
-    '''inscrit la réponse de la recherche beautifulSoup dans un dict: puis affecté à la variable global dataset '''
+    '''inscrit la réponse de la recherche beautifulSoup dans un dict: puis est affecté à la variable global dataset '''
     dict_meta = search_meta(req.text)
     dict_url = {F_STATUS: req.status_code}
     dict_url.update(dict_meta)
-    #print("dict update         ***************", dict_url)
+    # print("dict update         ***************", dict_url)
     # dataset est defini en global comme une liste
     global dataset
     dataset.append(dict_url)
@@ -74,6 +75,8 @@ def writetodict(req, is_verbose=False):
 
 
 def search_meta(text):
+    ''' recherche les éléments méta: Title, description, url, url_image dans un fichier html avec Beautifulsoup4:
+     renvoie un dictionnaire: dict_meta  '''
     dict_meta = {}
     soup = BeautifulSoup(text, "lxml")
     tit = soup.find("meta", property="og:title")
@@ -116,7 +119,7 @@ def search_meta(text):
 
 
 def get_urls(arg, is_verbose=False):
-
+    ''' lit une liste d'url pour initier à chaque item un affichage et la création d'un dictionnaire.'''
     for arg in listedesurls:
         try:
             req = get(arg)
@@ -157,6 +160,7 @@ def count_dataset(dataset_input):
 
 
 def displayUrl(req, is_verbose):
+    ''' affiche en console le status de la requète: 200 si ok et les détails du headers si en deuxième paramètre le booléen TRUE est passé'''
     #print(f"il y a  {len(req.text)} octets and {req.url}")
     print(req.status_code)
     # print(req.headers)
@@ -167,6 +171,8 @@ def displayUrl(req, is_verbose):
             # print(req.text)
         print("-"*30)
     return req
+
+# début du programe principal
 
 
 if __name__ == '__main__':
@@ -181,17 +187,22 @@ if __name__ == '__main__':
 
     # attention dataset est global
 
+    # affiche la taille de la gobale dataset
     print(len(dataset))
 
     # affiche le nom du fichier .py
     print(__file__)
+
     # affiche le repertoire absolue pour le système d'exploitation
     print(os.path.abspath(__file__))
+
     # affiche le répertoire contenant le fichier .py
     print(os.path.dirname(__file__))
+
     # récupére le nom du fichier dans la configuration du système d'exploitation
     basedir = os.path.dirname(os.path.abspath(__file__))
     print(basedir)
+
     # création du fichier checkurl.json dans le répertoire scrap
     filename = basedir+"/"+"checkurl.json"
 
