@@ -16,11 +16,11 @@ changelog v0.0.1
 
 
 ## 18/12
--Test unnitaire dont assertEqual
+-Test unitaire dont assertEqual
 Try, Except, exception
 Git, Github
 Fonctions dates dont calcul avec deux dates
--MVC Design pattern sur traitement d'une chaîne et de son affichage avec un controlleur
+-MVC Design pattern sur traitement d'une chaîne et de son affichage avec un controleur
 -Tester la classe d'un objet isinstance(a,class)
 -readme.md format markdown
 
@@ -36,7 +36,7 @@ Fonctions dates dont calcul avec deux dates
 
 -black save sans erreurs de LINT, aide à la réindentation, et à la cosmétique , lisibilité du code --->FORMAT
 
--virtualenv-->permet d'utiliser une configuration d'environnement propre à chaque projet et cela sur n'importe quel machine. on peut            spécifier quel python on veut travailler et quel package on télécharge
+-virtualenv-->permet d'utiliser une configuration d'environnement propre à chaque projet et cela sur n'importe quel machine. on peut spécifier quel python on veut travailler et quel package on télécharge
         - environnement python "propre", précise = version downloadable de python.org
         - répertoire de stockage de votre env se trouve dans /user/.virtualenv/....
         - pipfile->version humaine
