@@ -29,7 +29,7 @@ def validate(fullname):
     elif len_listnames == 1:
         d[F_LAST] = names[0]
     else:
-        error = "Format : Prénom <Milieu> Nom\nQue faire de : " + \
+        error = "Format : Prénom <Milieu> Nom \\n Que faire de : " + \
             " ".join(names[3:])
         d[F_ERRORE] = error
     return d
@@ -37,7 +37,8 @@ def validate(fullname):
 
 def manage_input():
     chaine = input("Nom et Prenom ?")
-    validate(chaine)
+    d = validate(chaine)
+    print(d)
 
 
 if __name__ == '__main__':

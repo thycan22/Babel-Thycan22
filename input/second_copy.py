@@ -32,13 +32,13 @@ def validate_display(in_nom):
     # print(len(nom))
 
     # vérifier que chaque str de nom ne comporte que des lettres de l'alphabet
-    type(nom)
+
     d = {}
     for n in nom:
         # n=n.strip() enleve les espaces
         if not validate_juststring(n):
             # return error
-            d += {F_ERRORE: 'erreur de validation : '+n}
+            d = {F_ERRORE: 'erreur de validation : '+n}
 
     if verifCharactere(nom):
         len_listnom = len(nom)
@@ -63,7 +63,7 @@ def validate_display(in_nom):
 
 def manage_input():
     chaine = input("Nom et Prenom ?")
-    return chaine
+    validate_display(chaine)
 
 
 def verifCharactere(chaine):
