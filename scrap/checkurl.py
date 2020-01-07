@@ -1,8 +1,9 @@
-from pip._vendor import requests
 import json
 import os
-from bs4 import BeautifulSoup
 
+from pip._vendor import requests
+
+from bs4 import BeautifulSoup
 
 dataset = []
 
@@ -118,9 +119,9 @@ def search_meta(text):
     # return retbuffer
 
 
-def get_urls(arg, is_verbose=False):
+def get_urls(listedesurl, is_verbose=False):
     ''' lit une liste d'url pour initier à chaque item un affichage et la création d'un dictionnaire.'''
-    for arg in listedesurls:
+    for arg in listedesurl:
         try:
             req = get(arg)
         except Exception as e:
@@ -162,7 +163,7 @@ def count_dataset(dataset_input):
 def displayUrl(req, is_verbose):
     ''' affiche en console le status de la requète: 200 si ok et les détails du headers si en deuxième paramètre le booléen TRUE est passé'''
     #print(f"il y a  {len(req.text)} octets and {req.url}")
-    print(req.status_code)
+    print("status code request response :", req.status_code)
     # print(req.headers)
     if is_verbose:
         # print(req.content[:500])
@@ -176,12 +177,12 @@ def displayUrl(req, is_verbose):
 
 
 if __name__ == '__main__':
-    exempleListe = ["matin", "midi", "soir", "minuit", "aube"]
-    for item in exempleListe:
-        print(item)
+    # exempleListe = ["matin", "midi", "soir", "minuit", "aube"]
+    # for item in exempleListe:
+    #    print(item)
         # "http://192.168.1.12:8080/formext/avions/avion
-    listedesurls = ["https://www.20minutes.fr/", "https://www.lemonde.fr", "https://www.lemonde.fr", "https://www.youtube.com/?hl=fr&gl=FR",
-                    "https://www.ouest-france.fr", "https://www.lemonde.fr", "https://www.python.org/"]
+    listedesurls = ["https://www.20minutes.fr/", "https://www.lemonde.fr", "https://www.youtube.com/?hl=fr&gl=FR",
+                    "https://www.ouest-france.fr", "https://www.python.org/"]
 
     get_urls(listedesurls, False)
 
@@ -197,7 +198,7 @@ if __name__ == '__main__':
     print(os.path.abspath(__file__))
 
     # affiche le répertoire contenant le fichier .py
-    print(os.path.dirname(__file__))
+    print("test :", os.path.dirname(__file__))
 
     # récupére le nom du fichier dans la configuration du système d'exploitation
     basedir = os.path.dirname(os.path.abspath(__file__))
