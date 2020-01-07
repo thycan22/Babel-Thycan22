@@ -76,7 +76,14 @@ debuguer
         -script execution sous win10, accés autorisé
                 enlever le warning w291 (mettre un \n enfin de ) chez Flake8(->Lint aide à la syntaxe avant d'attendre la compilation)
 ## 20/12
-checkurl, soup meta donnée
-count dans list dataset
+#DJango (2h) 
+        -create superuser admin->authentification CRUD model(bdd)
+        -create user 
+        -settings.py (config django)
+        -view home affiche contenu json checkurl.py, def home()->url
+        -template home.html(index.html) avec bootstrap
+        
+-checkurl, soup meta donnée
+-count dans list dataset
 
-Django cheet sheet
+-Django cheet sheet
