@@ -12,7 +12,7 @@ class PublicationAdmin(admin.ModelAdmin):
                     'date_publication',
                     'label_editor')
 
-    fieldset
+#  fieldset
 
 
 # Register your models here.

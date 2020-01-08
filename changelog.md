@@ -87,3 +87,10 @@ debuguer
 -count dans list dataset
 
 -Django cheet sheet
+
+## 07/01/2020
+-rappel web serveur cycle thread d'une reqête http.
+(serveur static(CDN:c content delivery network ), bdd)
+-Django, les url et les données static pour être accessibles doivent-être autorisés d'accès grâce à urls.py
+on accède à nos données static sur serveur distants nginx par exemple ou apache par url.
+--content-type : static
