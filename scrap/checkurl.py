@@ -79,6 +79,11 @@ def search_meta(text):
     ''' recherche les éléments méta: Title, description, url, url_image dans un fichier html avec Beautifulsoup4:
      renvoie un dictionnaire: dict_meta  '''
     dict_meta = {}
+    ''' problème d'encodage é ou è 
+    https://outils-javascript.aliasdmc.fr/encodage-caracteres-accentues/encode-caractere-00E9-html-css-js-autre.html
+     '''
+    text = text.replace("Ã©", "é")
+    text = text.replace("â", "'")
     soup = BeautifulSoup(text, "lxml")
     tit = soup.find("meta", property="og:title")
     if not tit:

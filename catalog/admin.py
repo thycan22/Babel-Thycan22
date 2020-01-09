@@ -1,5 +1,6 @@
 from django.contrib import admin
 from .models import Author, Publication, Dewey
+from django.utils.translation import gettext as _
 
 
 class PublicationAdmin(admin.ModelAdmin):
@@ -11,7 +12,7 @@ class PublicationAdmin(admin.ModelAdmin):
                     'author',
                     'dewey_number',
                     'date_publication',
-                    'label_editor')
+                    'label_editor',)
 
     list_reference = (('type_publication', 'dewey_number'),
                       ('isbn',
@@ -20,16 +21,16 @@ class PublicationAdmin(admin.ModelAdmin):
                         )
     list_details = ('date_publication', 'nb_tracks_pages',
                     'content',
-                    'image_url', 'image_file')
+                    'image_url', 'image_file',)
 
     fieldsets = (
-        ('Reference', {
+        (_('Reference'), {
             'fields': list_reference
         }),
-        ('Publication', {
+        (_('Publication'), {
             'fields':  list_publication
         }),
-        ('Details', {
+        (_('Details'), {
             'classes': ('collapse',),
             'fields': list_details
         }),
@@ -37,6 +38,10 @@ class PublicationAdmin(admin.ModelAdmin):
 
     radio_fields = {"type_publication": admin.HORIZONTAL}
     readonly_fields = ('reference',)
+    search_fields = ['name', 'reference', 'dewey_number__number', 'dewey_number__name',
+                     ]
+    autocomplete_fields = ['author', 'dewey_number', ]
+    list_filter = ('dewey_number__number', 'author__last_name',)
 
 
 class AuthorAdmin(admin.ModelAdmin):
@@ -52,22 +57,24 @@ class AuthorAdmin(admin.ModelAdmin):
     list_details = [('content', 'image_url', 'image_file',)]
 
     fieldsets = (
-        ('Identité', {
+        (_('Identité'), {
             'fields': list_identity
         }),
-        ('Naissance', {
+        (_('Naissance'), {
             'fields':  list_birth
         }),
-        ('Décès', {
+        (_('Décès'), {
             'classes': ('collapse',),
             'fields': list_death
         }),
-        ('Details', {
+        (_('Details'), {
             'classes': ('collapse',),
             'fields': list_details
         }),
     )
     readonly_fields = ('century_birth',)
+    search_fields = ('first_name', 'last_name', )
+    list_filter = ('first_name', 'last_name',)
 
 
 class DeweyAdmin(admin.ModelAdmin):
@@ -75,6 +82,8 @@ class DeweyAdmin(admin.ModelAdmin):
                     'name',
                     'set_dewey_color_publication',
                     )
+    search_fields = ['name', 'number', ]
+    list_filter = ('name',)
 
 
 # Register your models here.

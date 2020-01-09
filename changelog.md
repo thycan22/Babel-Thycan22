@@ -44,7 +44,36 @@ on accède à nos données static sur serveur distants nginx par exemple ou apac
 - images
 - amélioration
 
+## 08/01/2020
+- Django Babel : 
+-- Modèle BDD
+---- changement d'un modéle de l'application catalog (Dewey Author Publication) puis <makemigrations> et <migrate>
 
+-- Modèle fonctions métiers:
+---- Modéle DEWEY : ajout des couleurs Dewey dans table Dewey.
+---- Modèle Author : ajout de la donnée calculée century.
+
+-- Modéle Admin
+---- Formulaire = Définition d'un mode
+---- Formulaire redéfinition de l'affichage: regrouper en section les zones d'affichage
+        pour être en accord avec le métier et l'objet de la table auteur et publication.
+        list_display, fieldsets, read_only, radio_fields.
+
+- Architecture/Gestion de fonctionnalités de l'application.
+-- réflexion sur les choix de fonctionnalités de "saisie formulaire" à prendre :
+---- parfois les devs spécifiques s'évitent par une formation/accompagnement de l'utilisateur final.
+---- retour de l'expérience métier, permet de corriger ou orienter le dev.
+---- priorisation de développement/ordonnancement de dev
+
+
+
+- Algorythme : recherche du siècle avec une date en entrée yyyy/mm/dd
+
+## 09/01/2020
+
+- Django Babel :
+-- Modele admin: formulaire : affichage: ajout de fonctinnalité 'affichage automatique de la couleur Dewey suite à l'insertion d'une publication'
+-- ajout des de la possibilité de traductions des noms des champs: <(verbose_name="xxxx"),>
 
 # Semaine 1  Python Algorythmes
 

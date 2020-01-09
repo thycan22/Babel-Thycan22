@@ -1,3 +1,11 @@
+
+"""
+UTILS.PY
+Catalog shared functions
+
+"""
+
+
 def test_get_century():
     year_to_test = [1701, 19, 1701, 2011, 1200, 403]
     for y in year_to_test:
@@ -18,7 +26,10 @@ def test_get_century():
 
 
 def get_century(date):
+    """
+    get_century - get century from int year and return int century
 
+    """
     if date > 100:
         century = date % 100
         if century == 0:

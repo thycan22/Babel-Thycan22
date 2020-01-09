@@ -59,15 +59,56 @@
       <p class="lead">{{jumbotron_p}}</p>
     </div>
   </div>
+
+
   checkurl:<br>
-  {% if checkurl.dataset%}
-  {% for item in checkurl.dataset %}
-  {{ item.title}}<br>
-  <img src="{{ item.image }}" width=400px /><br>
-  {%endfor%}
-  {% else %}
-  {{checkurl|safe}}
-  {% endif%}
+  <style>
+    .newsroom {
+      max-width: 400px;
+    }
+
+    .newsroom li {
+      padding-top: 1rem;
+      padding-bottom: 1rem;
+
+      border: 1px solid black;
+      border-bottom: 3px solid black;
+    }
+
+    .newsroom li:hover {
+      background-color: chartreuse;
+      cursor: pointer;
+    }
+
+    .newsroom a {
+      text-decoration: none;
+      display: block;
+    }
+  </style>
+  <div class="newsroom">
+    <h1>Salle de Presse.</h1><br>
+
+    <div class="newsroom-list">
+      {% if checkurl.dataset%}
+      <ul class="list-unstyled">
+        {% for item in checkurl.dataset %}
+
+        <li>
+          <a href="{{ item.url }}">
+            <h2>{{ item.title|safe}}</h2>
+            <br>
+            <img src="{{ item.image }}" width=250px /><br>
+            {{item.description|safe}}<br>
+
+          </a>
+        </li>
+        {%endfor%}
+      </ul>
+      {% else %}
+      {{checkurl|safe}}
+      {% endif%}
+    </div>
+  </div>
   <!-- Optional JavaScript -->
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
   <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
