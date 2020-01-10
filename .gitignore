@@ -6,7 +6,9 @@ __pycache__/
 #vs-code
 *.code-workspace
 *.vscode/
-
+#Babel
+*files_static/
+*files_media/
 # C extensions
 *.so
 

@@ -1,0 +1,42 @@
+{% extends 'catalog/base.html'%}
+
+{%block jumbotron %}
+
+{%endblock%}
+
+{% block content %}
+<div class="row no-gutters">
+    <div class="col-12 col-sm-8">
+        {%include 'catalog/jumbotron.html'%}
+        <p>{'count': 5, 'dataset': [{'status_code': 200, 'description': 'Pour ne rien rater de l’actu, rendez-vous sur
+            20minutes.fr : politique, sport, économie… tous les sujets sont sur 20 Minutes, retrouvez le journal en
+            pdf',
+            'image': '', 'url': 'https://www.20minutes.fr/', 'title': '20 Minutes, information en continu, actualités,
+            politique, sport…'}, {'status_code': 200, 'description': 'International, Economie, Environnement … La
+            référence,
+            partout, tout le temps.', 'image': 'https://asset.lemde.fr/medias/img/social-network/default.png', 'url':
+            'https://www.lemonde.fr', 'title': 'Le Monde - Toute l&#039;actualité en continu'}, {'status_code':
+            200, 'description': '', 'image': '', 'url': '', 'title': 'YouTube'}, {'status_code': 200, 'description':
+            "Une :
+            toute l'\x80\x99actualité en direct, soyez informé de toute l'\x80\x99info en continu, en images et en
+            vidéos,
+            dans votre région, en France et dans le monde. Partagez et commentez en temps réel, Ã\xa0 tout moment de la
+            journée", 'image': 'https://www.ouest-france.fr/sites/all/themes/front/images/logos/logo-of-150x150.png',
+            'url':
+            'https://www.ouest-france.fr/', 'title': "Ouest-France : toute l'actualité en direct, l'info en continu en
+            France, dans les régions et dans le monde"}, {'status_code': 200, 'description': 'The official home of the
+            Python Programming Language', 'image': 'https://www.python.org/static/opengraph-icon-200x200.png', 'url':
+            'https://www.python.org/', 'title': 'Welcome to Python.org'}]}</p>
+    </div>
+    <div class="col-12 col-sm-4">
+        {% include 'catalog/newsroom-list.html'%}
+    </div>
+</div>
+
+
+
+
+
+
+
+{% endblock %}

@@ -2,7 +2,6 @@ from django.db import models
 from django.utils.html import format_html
 from django.utils.translation import gettext as _
 import xlrd
-from xlwt import Workbook, Formula
 from .utils import get_century
 
 # Create your models here.
@@ -80,7 +79,7 @@ class Dewey(models.Model):
         ("#FFFFFF", "white"),
     ]
 
-    name = models.CharField(max_length=61, verbose_name=_("Catégorie"),)
+    name = models.CharField(max_length=120, verbose_name=_("Catégorie"),)
     number = models.CharField(
         max_length=12, default='000', verbose_name=_("Numéro Dewey"),)
     bg_color = models.CharField(max_length=7,
@@ -144,10 +143,10 @@ class Dewey(models.Model):
             try:
                 i = int(self.number[:1])
                 return format_html(
-                    '<div style="background-color: {}; color: {};min-width: 150px;">{}</div>',
+                    '<span style="background-color: {}; color: {};min-width: 50px;">{}</span>',
                     self.BG_COLOR_CHOICES[i][1],
                     self.BG_COLOR_CHOICES[i][2],
-                    self.name,
+                    self.number,
                 )
             except:
                 return "Wrong Format"
@@ -205,14 +204,14 @@ class Publication(models.Model):
         ("F", "Film"),
         ("_", "Autre")
     ]
-    isbn = models.CharField(max_length=13, null=True,
+    isbn = models.CharField(max_length=14, null=True,
                             blank=True, verbose_name=_("ISBN"),)
-    name = models.CharField(max_length=61, verbose_name=_("Nom de l'oeuvre"),)
+    name = models.CharField(max_length=120, verbose_name=_("Nom de l'oeuvre"),)
     type_publication = models.CharField(
         max_length=1, choices=TYPEPUBLICATION_CHOICES, default='B', verbose_name=_("type de parution"),)
     genre = models.CharField(max_length=35, null=True, blank=True)
     author = models.ForeignKey(
-        Author, models.PROTECT, verbose_name=_("Autheur"),)
+        Author, models.PROTECT, verbose_name=_("Auteur"),)
     reference = models.CharField(
         max_length=61, null=True, blank=True, editable=False, verbose_name=_("Référence interne"),)
     dewey_number = models.ForeignKey(

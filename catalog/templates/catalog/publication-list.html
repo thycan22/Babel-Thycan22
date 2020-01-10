@@ -1,0 +1,13 @@
+
+
+
+Liste des publications:
+<hr>
+{% for publication_record in publication_object_list%}
+<p>
+        {{publication_record.name}}
+        {{publication_record.reference}}
+        <strong>{{publication_record.author}}</strong>
+        </p>
+<br>
+{% endfor %}

@@ -1,0 +1,12 @@
+{% comment %} {{dewey_object.name}} {{dewey_object.set_dewey_color_publication}}<br> {% endcomment %}
+
+<div class="list_group">
+    <h2>Filtrer par Dewey<h2>
+            {% for dewey_record in dewey_object_list %}
+            <a href="{% url 'publication' %}?dewey_number={{dewey_record.number}}" type="button" class="list-group-item list-group-item-action">
+                {{dewey_record.set_dewey_color_publication}}
+                {{dewey_record.name|truncatechars:38}}<br>
+            </a>
+
+            {% endfor %}
+</div>

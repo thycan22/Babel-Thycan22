@@ -71,9 +71,24 @@ on accède à nos données static sur serveur distants nginx par exemple ou apac
 
 ## 09/01/2020
 
+- Algo:
+  * ChekURL(Scrap Url) effectué en s1.
+  
 - Django Babel :
-  * Modele admin: formulaire : affichage: ajout de fonctinnalité 'affichage automatique de la couleur Dewey suite à l'insertion d'une publication'
-  * ajout des de la possibilité de traductions des noms des champs: <(verbose_name="xxxx"),>
+  * django Html: 
+    * création d'un composant  'newsroom' permettant d'améliorer l'affichage de notre scrap_url.
+    * 
+  * settings: création de FILES_MEDIA et FILES_STATIC:
+    * FILES_MEDIA: transfert des images des utilisateurs (file upload), peut être en accès privé.
+    * FILES_STATIC: ressources static de l'application, accès public.(CSS, js, Front, Jpg, video)
+  * Intégration dans les listes auteur et publication des filtres 'search_fields' et 'list_filter' recherche dans l'interface d'admin du back-office, de la bibliothècaire. Et 'autocomplete' dans les formulaires.
+  * override des libellés des champs affichés (publication dewey auteur) et possibilité de les traduire 'verbose_name="xxxx"' par la suite.
+  *  Modele admin: formulaire : affichage: ajout de fonctionnalité 'affichage automatique de la couleur Dewey suite à l'insertion d'une publication' bg_color et text_color
+- Sécurité
+  * Les string du programme que l'on evoie vers le browser doit être safe: '|safe': le serveur remplace tous les codes Html d'une string pour éviter les injections.
+  
+
+
 
 # Semaine 1  Python Algorythmes
 

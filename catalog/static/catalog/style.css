@@ -1,0 +1,40 @@
+    .newsroom {
+      /*max-width: 400px;*/
+      border: 1px solid white;
+
+    }
+
+    .newsroom li {
+      padding-top: 1rem;
+      padding-bottom: 1rem;
+
+      border: 1px solid black;
+      border-bottom: 3px solid pink;
+    }
+
+    .newsroom li:hover {
+      background-color: chartreuse;
+      cursor: pointer;
+    }
+
+    .list_group a:hover {
+      background-color: chartreuse;
+      cursor: pointer;
+    }
+    .list_group a {
+      text-decoration: none;
+      color: black;
+      display: block;
+    }
+
+    .newsroom a {
+      text-decoration: none;
+      color: black;
+      display: block;
+    }
+    footer {
+        padding: 1rem;
+        background-color: aquamarine;
+
+    }
+    

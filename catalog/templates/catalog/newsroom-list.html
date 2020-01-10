@@ -1,0 +1,26 @@
+
+
+ <div class="newsroom">
+    <h1>Quotidiens...</h1><br>
+
+    <div class="newsroom-list">
+      {% if checkurl.dataset%}
+      <ul class="list-unstyled">
+        {% for item in checkurl.dataset %}
+
+        <li>
+          <a href="{{ item.url }}">
+            <h2>{{ item.title|safe}}</h2>
+            <br>
+            <img src="{{ item.image }}" width=250px /><br>
+            {{item.description|safe}}<br>
+
+          </a>
+        </li>
+        {%endfor%}
+      </ul>
+      {% else %}
+      {{checkurl|safe}}
+      {% endif%}
+    </div>
+  </div>
