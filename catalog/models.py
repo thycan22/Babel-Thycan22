@@ -95,6 +95,9 @@ class Dewey(models.Model):
         return f"{self.number} - {self.name}"
 
     def xls_reader(self):
+        ''' permet de lire un fichier xls du répertoire /scrap/ grace à l'import xlrd 
+
+        '''
         path = "scrap/La_Dewey_simplifiee.xls"
         number = []
         # ouverture du classeur
@@ -118,7 +121,7 @@ class Dewey(models.Model):
                 # self.name = feuille.cell_value(i, 2)
 
     def clean(self):
-        self.xls_reader()
+        # self.xls_reader()
         str_number = str(int(self.number))
         if len(str_number) < 3:
             str_number = str(int(self.number))
