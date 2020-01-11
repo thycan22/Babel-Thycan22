@@ -1,1 +1,1 @@
-web: python babel-thycan22.py
+web: gunicorn babel-thycan22.wsgi --log-file -
