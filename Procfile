@@ -1,1 +1,1 @@
-web: gunicorn babel.wsgi
+web: gunicorn babel-thycan22.wsgi
