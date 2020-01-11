@@ -123,7 +123,6 @@ def search_meta(text):
     # print(f"Test search_title : {begin}, {end}, {retbuffer}")
     # return retbuffer
 
-
 def get_urls(listedesurl, is_verbose=False):
     ''' lit une liste d'url pour initier à chaque item un affichage et la création d'un dictionnaire.'''
     for arg in listedesurl:
