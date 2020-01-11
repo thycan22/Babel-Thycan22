@@ -25,7 +25,7 @@ SECRET_KEY = '8n$3$(4tw__9w$1k@)3bucrrlgv89wyl$je^b)$uag$8&n$)u$'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [babeldjango.herokuapp.com]
 
 
 # Application definition
