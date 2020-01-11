@@ -93,31 +93,31 @@ class Dewey(models.Model):
     def __str__(self):
         return f"{self.number} - {self.name}"
 
-    def xls_reader(self):
-        ''' permet de lire un fichier xls du répertoire /scrap/ grace à l'import xlrd 
+    # def xls_reader(self):
+    #     ''' permet de lire un fichier xls du répertoire /scrap/ grace à l'import xlrd
 
-        '''
-        path = "scrap/La_Dewey_simplifiee.xls"
-        number = []
-        # ouverture du classeur
-        classeur = xlrd.open_workbook(path)
+    #     '''
+    #     path = "scrap/La_Dewey_simplifiee.xls"
+    #     number = []
+    #     # ouverture du classeur
+    #     classeur = xlrd.open_workbook(path)
 
-        # Récupération du nom de toutes les feuilles sous forme de liste
-        nom_des_feuilles = classeur.sheet_names()
+    #     # Récupération du nom de toutes les feuilles sous forme de liste
+    #     nom_des_feuilles = classeur.sheet_names()
 
-        # Récupération de la première feuille
-        feuille = classeur.sheet_by_name(nom_des_feuilles[0])
-        for i in range(0, 109):
-            # for j in range(0, 1):
-                # print(u"Lecture des cellules:")
-                # print("A1: {}".format(feuille.cell_value(i, j)))
-            if feuille.cell_value(i, 1):
-                item = Dewey(number=feuille.cell_value(i, 1),
-                             name=feuille.cell_value(i, 2))
-                item.save()
-                print("Number: {}".format(feuille.cell_value(i, 1)))
-                # elif !(feuille.cell_value(i, 1)) and feuille.cell_value(i, 2):
-                # self.name = feuille.cell_value(i, 2)
+    #     # Récupération de la première feuille
+    #     feuille = classeur.sheet_by_name(nom_des_feuilles[0])
+    #     for i in range(0, 109):
+    #         # for j in range(0, 1):
+    #             # print(u"Lecture des cellules:")
+    #             # print("A1: {}".format(feuille.cell_value(i, j)))
+    #         if feuille.cell_value(i, 1):
+    #             item = Dewey(number=feuille.cell_value(i, 1),
+    #                          name=feuille.cell_value(i, 2))
+    #             item.save()
+    #             print("Number: {}".format(feuille.cell_value(i, 1)))
+    #             # elif !(feuille.cell_value(i, 1)) and feuille.cell_value(i, 2):
+    #             # self.name = feuille.cell_value(i, 2)
 
     def clean(self):
         # self.xls_reader()
