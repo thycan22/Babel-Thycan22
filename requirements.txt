@@ -1,3 +1,7 @@
-django
-gunicorn
-django-heroku
+autopep8==1.4.4
+certifi==2019.11.28
+gunicorn==20.0.4
+pipenv==2018.11.26
+pycodestyle==2.5.0
+virtualenv==16.7.8
+virtualenv-clone==0.5.3
