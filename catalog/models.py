@@ -5,6 +5,10 @@ import xlrd
 from .utils import get_century
 
 # Create your models here.
+""" 
+Modèle de l'app: Publication Author Dewey 
+
+"""
 
 
 class Author(models.Model):

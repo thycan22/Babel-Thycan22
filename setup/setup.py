@@ -11,6 +11,14 @@ import sys
 import os
 import datetime
 
+# setup.py
+from setuptools import setup, find_packages
+
+setup(
+    name='catalog',
+    packages=find_packages()
+)
+
 
 def printseparator():
     """ fonction qui affiche une ligne de séparation"""

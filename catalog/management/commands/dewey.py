@@ -1,6 +1,6 @@
 from django.core.management.base import BaseCommand
-from catalog.models import Dewey
 from catalog.utils import xls_reader
+from catalog.models import Dewey
 
 
 class Command(BaseCommand):
@@ -14,5 +14,5 @@ class Command(BaseCommand):
         if options["source"]:
             source = options["source"]
 
-        rc = xls_reader(DeweyTest, source)
+        rc = xls_reader(Dewey, source)
         print(f"Nb of dewey items processed {rc}")
