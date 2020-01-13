@@ -25,7 +25,7 @@ SECRET_KEY = '8n$3$(4tw__9w$1k@)3bucrrlgv89wyl$je^b)$uag$8&n$)u$'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['babeldjango.herokuapp.com', ]
+ALLOWED_HOSTS = ['babeldjango.herokuapp.com', '127.0.0.1', ]
 
 
 # Application definition
@@ -73,11 +73,19 @@ WSGI_APPLICATION = 'babel.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
+# 'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+#     }
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'dcputfimhd2ub1',
+        'USER': 'joheshpyucuqgr',
+        'PASSWORD': '2b2b87ae11c8a05e2c4f31454d8110354e9148f66bf430b78c5a144a85de1a1b',
+        'HOST': 'ec2-54-246-98-119.eu-west-1.compute.amazonaws.com',
+        'PORT': '5432',
     }
 }
 
