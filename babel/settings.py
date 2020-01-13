@@ -11,10 +11,19 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 """
 
 import os
+import django_heroku
+import dj_database_url
+import dotenv
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 print(f'BASE_DIR={BASE_DIR}')
+
+# This is new:
+dotenv_file = os.path.join(BASE_DIR, ".env")
+if os.path.isfile(dotenv_file):
+    dotenv.load_dotenv(dotenv_file)
+
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
@@ -42,12 +51,14 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+
 ]
 
 ROOT_URLCONF = 'babel.urls'
@@ -73,21 +84,15 @@ WSGI_APPLICATION = 'babel.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
-# 'default': {
+# DATABASES = {
+#     'default': {
 #         'ENGINE': 'django.db.backends.sqlite3',
 #         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
 #     }
+# }
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'dcputfimhd2ub1',
-        'USER': 'joheshpyucuqgr',
-        'PASSWORD': '2b2b87ae11c8a05e2c4f31454d8110354e9148f66bf430b78c5a144a85de1a1b',
-        'HOST': 'ec2-54-246-98-119.eu-west-1.compute.amazonaws.com',
-        'PORT': '5432',
-    }
-}
+DATABASES = {}
+DATABASES['default'] = dj_database_url.config(conn_max_age=600)
 
 
 # Password validation
@@ -129,12 +134,20 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+# PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
+
 STATIC_ROOT = os.path.join(BASE_DIR, "files_static")
 # '/var/www/static/',   mode serveur APACHE
 print(f"STATIC={STATIC_ROOT}")
-
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 MEDIA_URL = "/MEDIA/"
 MEDIA_ROOT = os.path.join(BASE_DIR, "files_media")
 
 print(f"MEDIA={MEDIA_ROOT}")
+
+
+django_heroku.settings(locals())
+
+# This is new
+del DATABASES['default']['OPTIONS']['sslmode']
