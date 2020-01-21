@@ -9,21 +9,23 @@
       padding-bottom: 1rem;
 
       border: 1px solid black;
-      border-bottom: 3px solid pink;
+      border-bottom: 3px solid rgb(131, 61, 223);
+      border-radius: 1em;
     }
 
     .newsroom li:hover {
-      background-color: chartreuse;
+      background-color: aliceblue;
       cursor: pointer;
     }
 
     .list_group a:hover {
-      background-color: chartreuse;
+      background-color: cornsilk;
       cursor: pointer;
     }
     .list_group a {
       text-decoration: none;
       color: black;
+      
       display: block;
     }
 

@@ -2,6 +2,28 @@
 (suivi à destination de l'équipe)
 
 changelog v0.0.1
+# semaine 3 J1
+
+étapes de conception WEB de Babel.
+
+- cahier des charges/clients/besoins/objectifs/delais/prix
+- choix technologiques
+- étapes :
+###### 1
+- structure des données, des tables(makemigrations et migrate)
+- superadmin, compte admin
+- composants/fonctions métiers
+    - liste Dewey, norme de travail
+    - publications
+    - auteurs
+###### 2
+- backoffice pour l'admin en lien au données
+###### 3 
+- site public avec son interface
+- affichage dernieres oeuvres insérées 
+- fiche oeuvre
+- recherche via Dewey
+
 
 # semaine 2 Django Babel
 
@@ -26,6 +48,7 @@ on accède à nos données static sur serveur distants nginx par exemple ou apac
   * definition de deux personna sur les quatres.
 - Objet:
   * Construction de l'interface backoffice pour la gestion du catalogue d'une médiathèque.
+
 ### retour utilisateurs et clients
 #### partie A
 #####  Aide à la saisie
@@ -87,7 +110,15 @@ on accède à nos données static sur serveur distants nginx par exemple ou apac
 - Sécurité
   * Les string du programme que l'on evoie vers le browser doit être safe: '|safe': le serveur remplace tous les codes Html d'une string pour éviter les injections.
   
+## 10/01/2020
 
+- Front : template HTML
+- Query : liste des données
+- URLS : aiguillage des URLS
+- rappel du MVTC
+- choix de l'architecture  des URLS
+- norme d'écriture BEM, d'entreprise
+- HEROKU déploiement de l'application
 
 
 # Semaine 1  Python Algorythmes

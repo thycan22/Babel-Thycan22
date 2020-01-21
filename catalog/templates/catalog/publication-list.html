@@ -1,13 +1,27 @@
+<h2>Liste des publications :</h2>
+<div class="publication">
+        <div class="list-group">
+                <table>
+                        <thead>
+                                <tr>
+                                        <th scope="col">#</th>
+                                        <th scope="col">référence</th>
+                                        <th scope="col">Author</th>
+                                </tr>
+                        </thead>
+                        <tbody>
+                                {% for publication_record in publication_object_list %}
+                                <tr>
+                                        <td> {{publication_record.name}}</td>
+                                        <td> <a href="{% url 'publication-detail-pk' publication_record.pk %}">{{publication_record.reference}}</a>
+                                        </td>
+                                        <td> <strong>{{publication_record.author}}</strong></td>
+                                </tr>
+                                <br>
+                                {% endfor %}
+                        </tbody>
 
 
-
-Liste des publications:
-<hr>
-{% for publication_record in publication_object_list%}
-<p>
-        {{publication_record.name}}
-        {{publication_record.reference}}
-        <strong>{{publication_record.author}}</strong>
-        </p>
-<br>
-{% endfor %}
+                </table>
+        </div>
+</div>
