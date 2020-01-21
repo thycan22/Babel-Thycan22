@@ -48,6 +48,7 @@ class PublicationByDewey(MixinContextPage, ListView):
 
         # ou requete avec l'objet Dewey
         self.currentdewey = Dewey.objects.get(number=deweynumber)
+        self.publication_count = queryset.count()
         return queryset
 
     def get_context_data(self, **kwargs):
@@ -60,6 +61,9 @@ class PublicationByDewey(MixinContextPage, ListView):
 
         # ajout de l'élément dewey actif
         context['dewey_active'] = self.currentdewey
+        # diverses variables
+        context['jumbotron_class'] = 'dewey' + self.currentdewey.number
+        context['publication_count'] = self.publication_count
 
         # appel de la fonction get_mycontext() de MixinContextPage
         # traduction avec le dewey number de l'URL

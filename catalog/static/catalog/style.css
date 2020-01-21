@@ -34,6 +34,48 @@
       color: black;
       display: block;
     }
+        /* Dewey color */
+    .dewey000 {
+      background-color: #000000; 
+      color:#FFFFFF;
+    }
+    .dewey100 {
+      background-color: #8B4513;
+      color: #FFFFFF;
+    }
+    .dewey200{
+    background-color: #FF0000; 
+    color: #FFFFFF;
+    }
+    .dewey300 { 
+      background-color : rgb(226, 115, 25);
+      color: #FFFFFF;
+    }
+    .dewey400{
+      background-color: #FFFF00; 
+      color: #000000;
+    }
+    .dewey500{
+      background-color: #32CD32; 
+      color: #FFFFFF;
+    }
+    .dewey600{
+      background-color: #1E90FF; 
+      color: #FFFFFF;
+    }
+    .dewey700{
+      background-color: #8B008B; 
+      color: #FFFFFF;
+    }
+    .dewey800{
+      background-color: #A9A9A9; 
+      color: #FFFFFF;
+    }
+    .dewey900{
+      background-color: #FFFFFF; 
+      color: #000000;
+    }
+
     footer {
         padding: 1rem;
         background-color: aquamarine;
