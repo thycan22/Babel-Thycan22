@@ -9,6 +9,7 @@ __pycache__/
 #Babel
 *files_static/
 *files_media/
+*staticfiles/
 # C extensions
 *.so
 

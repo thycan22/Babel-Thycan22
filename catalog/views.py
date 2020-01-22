@@ -12,11 +12,12 @@ CONTEXT_GLOBAL = {'mediatheque_name': 'Bibliothèque de Saint Pons',
 
 
 def publication(request):
-
-    record = Dewey.objects.get(number='100')
-    record_list = Dewey.objects.all()
-
-    publication_list = Publication.objects.all()
+    try:
+        # record = Dewey.objects.get(number='100')
+        record_list = Dewey.objects.all()
+        publication_list = Publication.objects.all()
+    except:
+        record = record_list = Publication.objects.all()
 
     context_local = {"title": "liste des publications du catalogue",
                      "description": "Publication et leurs références"}

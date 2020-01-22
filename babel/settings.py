@@ -148,7 +148,7 @@ STATIC_URL = '/static/'
 
 # PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
 
-STATIC_ROOT = os.path.join(BASE_DIR, "files_static")
+STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
 # '/var/www/static/',   mode serveur APACHE
 print(f"STATIC={STATIC_ROOT}")
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
