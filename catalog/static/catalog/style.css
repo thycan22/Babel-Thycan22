@@ -75,6 +75,17 @@
       background-color: #FFFFFF; 
       color: #000000;
     }
+    table {
+      border-collapse: collapse;
+      width: 100%;
+    }
+    
+    table, th, td {
+      border: 1px solid rgb(158, 150, 150);
+    }
+    th {
+      text-align: center;
+    }
 
     footer {
         padding: 1rem;

@@ -1,4 +1,6 @@
-
+import os
+from django.conf import settings
+import xlrd
 """
 UTILS.PY
 Catalog shared functions
