@@ -15,9 +15,10 @@
                         <tbody>
                                 {% for publication_record in publication_object_list %}
                                 <tr>
-                                        <td> {{publication_record.name}}</td>
                                         <td> <a href="{% url 'publication-detail-pk' publication_record.pk %}">{{publication_record.reference}}</a>
                                         </td>
+                                        <td> {{publication_record.name}}</td>
+
                                         <td> <strong>{{publication_record.author}}</strong></td>
                                 </tr>
                                 <br>

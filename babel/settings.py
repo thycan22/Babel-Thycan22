@@ -41,7 +41,7 @@ DEBUG = strtobool(os.getenv('DJANGO_DEBUG', '0'))
 if DEBUG:
     print('Mode Debug !!!!')
 
-ALLOWED_HOSTS = ['babeldjango.herokuapp.com', '127.0.0.1', ]
+ALLOWED_HOSTS = ['babeldjango.herokuapp.com', '127.0.0.1', 'localhost']
 
 
 # Application definition
@@ -53,6 +53,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'import_export',
     'catalog',
 ]
 
@@ -91,15 +92,21 @@ WSGI_APPLICATION = 'babel.wsgi.application'
 
 # Database
 # https: // docs.djangoproject.com/en/3.0/ref/settings/  # databases
-DATABASES = {
-    # si j'utilise sqlite3
-    # 'default': {
-    #     'ENGINE': 'django.db.backends.sqlite3',
-    #     'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    # }
-    'default': dj_database_url.config(),
+USE_LOCAL_DB = strtobool(os.getenv('USE_LOCAL_DB', '0'))
+if USE_LOCAL_DB:
+    DATABASES = {
+        # si j'utilise sqlite3 par default en développement
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        }
+    }
+else:
+    DATABASES = {
+        # charge postgrsql (le defaut en production)
+        'default': dj_database_url.config(),
 
-}
+    }
 
 
 # DATABASES = {}
@@ -158,8 +165,8 @@ MEDIA_ROOT = os.path.join(BASE_DIR, "files_media")
 
 print(f"MEDIA={MEDIA_ROOT}")
 
-
-django_heroku.settings(locals())
+if not USE_LOCAL_DB:
+    django_heroku.settings(locals())
 
 # This is new
 del DATABASES['default']['OPTIONS']['sslmode']
