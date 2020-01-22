@@ -21,7 +21,7 @@ from catalog.views import home, newsroom, about, publication
 from catalog.viewscat import PublicationByDewey, PublicationDetail
 
 
-urlpatterns = ([
+urlpatterns = [
     path('admin/', admin.site.urls),
     path('newsroom/', newsroom, name="sandbox"),
     path('newsroom/', newsroom, name="newsroom"),
@@ -36,9 +36,8 @@ urlpatterns = ([
     path('', home, name="home"),
 
 ]
-    if settings.DEBUG:
+if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL,
                           document_root=settings.MEDIA_ROOT)
     urlpatterns += static(settings.STATIC_URL,
                           document_root=settings.STATIC_ROOT)
-)
