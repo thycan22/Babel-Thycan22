@@ -37,7 +37,7 @@ print(f'BASE_DIR={BASE_DIR}')
 SECRET_KEY = os.getenv('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = strtobool(os.getenv('DEBUG_DJANGO', '0'))
+DEBUG = strtobool(os.getenv('DJANGO_DEBUG', '0'))
 if DEBUG:
     print('Mode Debug !!!!')
 
